@@ -1,0 +1,156 @@
+/* dark_theme.qss - Modern Koyu Tema */
+
+/* Genel Widget Ayarları */
+QWidget {
+    background-color: #2F323A; /* Ana koyu gri */
+    color: #E6E6E6;            /* Açık gri metin */
+    font-size: 10pt;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Daha modern font */
+}
+
+/* Ana Pencere ve Diyaloglar */
+QMainWindow, QDialog {
+    background-color: #2F323A;
+}
+
+/* Grup Kutuları (GroupBox) */
+QGroupBox {
+    background-color: #3B3F4A; /* Grup kutusu arka planı, ana arka plandan biraz daha açık */
+    border: 1px solid #5A6070; /* Yumuşak kenar */
+    border-radius: 6px;        /* Hafif yuvarlak köşeler */
+    margin-top: 1ex;
+    font-weight: bold;
+    color: #F0F0F0;            /* Başlık metni */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0 4px;
+    background-color: #3B3F4A;
+    border-radius: 4px;
+}
+
+/* Butonlar */
+QPushButton {
+    background-color: #4A5064; /* Normal buton arka planı */
+    border: 1px solid #6A728A; /* Normal buton kenarı */
+    padding: 7px 12px;         /* Daha fazla dolgu */
+    border-radius: 4px;        /* Yuvarlak köşeler */
+    color: #F0F0F0;
+    min-width: 90px;           /* Minimum genişlik */
+}
+
+QPushButton:hover {
+    background-color: #5A6070; /* Hover rengi */
+    border-color: #8C94A6;
+}
+
+QPushButton:pressed {
+    background-color: #3B3F4A; /* Basıldığında rengi */
+    border-color: #9BA4B8;
+}
+
+QPushButton:disabled {
+    background-color: #3A3D44;
+    border-color: #4A4E58;
+    color: #6C707A;
+}
+
+/* Giriş Kutuları, Açılır Menüler, Tarih Seçiciler ve Tablolar */
+QLineEdit, QComboBox, QDateEdit, QTableWidget {
+    background-color: #2A2C33; /* Daha koyu giriş arka planı */
+    border: 1px solid #5A6070;
+    padding: 4px;
+    border-radius: 4px;
+    color: #E6E6E6;
+}
+
+/* Açılır Menü Okları */
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid #5A6070;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+QComboBox::down-arrow {
+    image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNFOTU0NDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTcuNDEgOC41OUwxMiAxMy4xNzhsNC41OS00LjU4OEwxOCAxMGwtNiA2LTYtNnoiLz48L3N2Zy4+); /* Özel ok ikonu */
+    width: 14px;
+    height: 14px;
+}
+
+/* Liste Widget'ı */
+QListWidget {
+    background-color: #2A2C33;
+    border: 1px solid #5A6070;
+    selection-background-color: #4A5064; /* Seçili öğe arka planı */
+    selection-color: #E6E6E6;             /* Seçili öğe metni */
+}
+QListWidget::item:hover {
+    background-color: #3B3F4A; /* Hover rengi */
+}
+
+/* Menü Çubuğu ve Menüler */
+QMenuBar {
+    background-color: #3B3F4A;
+    color: #E6E6E6;
+    padding: 4px;
+}
+
+QMenuBar::item:selected {
+    background-color: #4A5064;
+}
+
+QMenu {
+    background-color: #3B3F4A;
+    border: 1px solid #5A6070;
+    color: #E6E6E6;
+}
+
+QMenu::item:selected {
+    background-color: #4A5064;
+}
+
+/* Durum Çubuğu */
+QStatusBar {
+    background-color: #3B3F4A;
+    color: #BBDEF0; /* Daha yumuşak bir mavi tonu */
+    font-style: italic;
+    padding: 3px;
+}
+
+/* Tablo Başlıkları */
+QHeaderView::section {
+    background-color: #3B3F4A;
+    color: #E6E6E6;
+    padding: 5px;
+    border: 1px solid #5A6070;
+}
+
+/* Özel renkler (QColor ile kullanılanlar) */
+/* Koyu temada daha iyi görünen renkler */
+QLabel { /* Genel label rengini override edebilir */
+    color: #E6E6E6;
+}
+QLabel[styleSheet*="color: #0055A4;"] { /* Detay paneli ID */
+    color: #79BAFF; /* Daha açık mavi */
+}
+QLabel[styleSheet*="color: #2E8B57;"] { /* Detay paneli Başarı Yeşil */
+    color: #85E085; /* Daha açık yeşil */
+}
+QLabel[styleSheet*="color: #B22222;"] { /* Detay paneli Predasyon Kırmızı */
+    color: #FF7070; /* Daha açık kırmızı */
+}
+
+/* Simülasyon tablosu renklendirmesi */
+QTableWidget::item {
+    color: #E6E6E6; /* Varsayılan metin rengi */
+}
+QTableWidget::item:selected {
+    background-color: #4A5064;
+    color: #E6E6E6;
+}
+/* Bu QColor ile kodda doğrudan atanan renkleri override etmez, ama genel tablonun metin rengi bu olur */
+/* Kod içindeki QColor('#28A745') ve QColor('#DC3545') değerleri doğrudan uygulanmaya devam eder */
